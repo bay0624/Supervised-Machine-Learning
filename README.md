@@ -44,3 +44,15 @@ plt.show()
 ```
 ![classification_report1](https://github.com/bay0624/Supervised-Machine-Learning/blob/main/images/Confusion_Matrix1.png)
 
+### Repeat same steps as above for the scaled data
+```python
+# Scaling the data
+from sklearn.preprocessing import StandardScaler
+
+scaler = StandardScaler().fit(X_train)
+X_train_scaled = scaler.transform(X_train)
+X_test_scaled = scaler.transform(X_test)
+```
+### Training and Testing Score for scaled data (Logistic Regression Model)
+Training Data Score: 0.713136288998358 <br>
+Testing Data Score: 0.7201190982560612
