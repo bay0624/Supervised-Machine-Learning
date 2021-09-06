@@ -4,10 +4,10 @@ Building a machine learning model that attempts to predict whether a loan from L
 # Background
 LendingClub is a peer-to-peer lending services company that allows individual investors to partially fund personal loans as well as buy and sell notes backing the loans on a secondary market. LendingClub offers their previous data through an API.
 
-The objective is to use this data to create machine learning models to classify the risk level of given loans. Specifically, comparing the Logistic Regression model and Random Forest Classifier.
+The objective is to use this data to create machine learning models to classify the risk level of given loans. Specifically, comparing the Logistic Regression model and Random Forest Classifier. Create a LogisticRegression model, fit it to the data, and print the model's score. Do the same for a RandomForestClassifier.
 
 # Steps
-### Create Logistic Regression Model for the unscaled data
+## Create Logistic Regression Model for the unscaled data
 ```python
 from sklearn.linear_model import LogisticRegression
 classifier = LogisticRegression()
@@ -44,7 +44,7 @@ plt.show()
 ```
 <img src="https://github.com/bay0624/Supervised-Machine-Learning/blob/main/images/Confusion_Matrix1.png" width="400">
 
-### Repeat same steps as above for the scaled data
+## Repeat same steps as above for the scaled data
 ```python
 # Scaling the data
 from sklearn.preprocessing import StandardScaler
@@ -57,11 +57,31 @@ X_test_scaled = scaler.transform(X_test)
 Training Data Score: 0.713136288998358 <br>
 Testing Data Score: 0.7201190982560612
 
-### Create Random Forest Classifier for the unscaled data
+### Classification Report for scaled data (Logistic Regression Model)
+<img src="https://github.com/bay0624/Supervised-Machine-Learning/blob/main/images/Class_Report2.png" width="600">
+
+### Confusion Matrix Heatmap for scaled data (Logistic Regression Model)
+<img src="https://github.com/bay0624/Supervised-Machine-Learning/blob/main/images/Confusion_Matrix2.png" width="400">
+
+## Create Random Forest Classifier for the unscaled data
 ```python
+from sklearn.ensemble import RandomForestClassifier
 clf_1 = RandomForestClassifier(random_state=1, n_estimators=500).fit(X_train, y_train)
 print(f'Training Score: {clf_1.score(X_train, y_train)}')
 print(f'Testing Score: {clf_1.score(X_test, y_test)}')
 ```
 Training Data Score: 1.0 <br>
-Testing Data Score: .6180348787749894
+Testing Data Score: 0.6180348787749894
+
+## Create Random Forest Classifier for the scaled data
+```python
+clf = RandomForestClassifier(random_state=1, n_estimators=500).fit(X_train_scaled, y_train)
+print(f'Training Score: {clf.score(X_train_scaled, y_train)}')
+print(f'Testing Score: {clf.score(X_test_scaled, y_test)}')
+```
+Training Data Score: 1.0 <br>
+Testing Data Score: 0.6193109315185028
+
+# Conclusion
+
+
