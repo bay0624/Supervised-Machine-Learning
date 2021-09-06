@@ -30,7 +30,7 @@ confusion_matrix(y_true, y_pred)
 ```python
 print(classification_report(y_true, y_pred))
 ```
-![classification_report1](https://github.com/bay0624/Supervised-Machine-Learning/blob/main/images/Class_Report1.png)
+<img src="https://github.com/bay0624/Supervised-Machine-Learning/blob/main/images/Class_Report1.png" width="600">
 
 ### Visualize the Confusion Matrix for the Logistic Regression Model
 ```python
@@ -42,7 +42,7 @@ sn.set(font_scale=1.4) # for label size
 sn.heatmap(confusion_df, annot=True, annot_kws={"size": 14})
 plt.show()
 ```
-![classification_report1](https://github.com/bay0624/Supervised-Machine-Learning/blob/main/images/Confusion_Matrix1.png)
+<img src="https://github.com/bay0624/Supervised-Machine-Learning/blob/main/images/Confusion_Matrix1.png" width="400">
 
 ### Repeat same steps as above for the scaled data
 ```python
@@ -56,3 +56,12 @@ X_test_scaled = scaler.transform(X_test)
 ### Training and Testing Score for scaled data (Logistic Regression Model)
 Training Data Score: 0.713136288998358 <br>
 Testing Data Score: 0.7201190982560612
+
+### Create Random Forest Classifier for the unscaled data
+```python
+clf_1 = RandomForestClassifier(random_state=1, n_estimators=500).fit(X_train, y_train)
+print(f'Training Score: {clf_1.score(X_train, y_train)}')
+print(f'Testing Score: {clf_1.score(X_test, y_test)}')
+```
+Training Data Score: 1.0 <br>
+Testing Data Score: .6180348787749894
