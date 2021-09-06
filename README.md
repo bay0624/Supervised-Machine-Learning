@@ -18,7 +18,7 @@ print(f"Testing Data Score: {classifier.score(X_test, y_test)}")
 Training Data Score: 0.6485221674876848 <br>
 Testing Data Score: 0.5253083794130158
 
-### Create Confusion Matrix for the Logistic Regression Model for the unscaled data and printing out the Classification Report
+### Create Confusion Matrix for the Logistic Regression Model for the unscaled data and print out the Classification Report
 ```python
 from sklearn.metrics import confusion_matrix, classification_report
 
@@ -27,4 +27,8 @@ y_pred = classifier.predict(X_test)
 confusion_matrix(y_true, y_pred)
 print(classification_report(y_true, y_pred))
 ```
+![classification_report1](https://github.com/bay0624/Supervised-Machine-Learning/blob/main/images/Class_Report1.png)
+
+### Visualize the Confusion Matrix for the Logistic Regression Model
+![classification_report1](https://github.com/bay0624/Supervised-Machine-Learning/blob/main/images/Confusion_Matrix1.png)
 
