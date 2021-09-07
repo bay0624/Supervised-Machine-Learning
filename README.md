@@ -7,7 +7,7 @@ LendingClub is a peer-to-peer lending services company that allows individual in
 The objective is to use this data to create machine learning models to classify the risk level of given loans. Specifically, comparing the Logistic Regression model and Random Forest Classifier. Create a LogisticRegression model, fit it to the data, and print the model's score. Do the same for a RandomForestClassifier.
 
 # Steps
-## Import data source
+## Load data source
 ```python
 train_df = pd.read_csv(Path('Resources/2019loans.csv'))
 test_df = pd.read_csv(Path('Resources/2020Q1loans.csv'))
